@@ -62,7 +62,7 @@ export function Sidebar({ className }: SidebarProps) {
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed left-0 top-0 z-40 h-screen w-60 border-r bg-[hsl(var(--sidebar-background))] transition-transform relative overflow-hidden',
+          'fixed left-0 top-0 z-40 h-screen w-60 border-r bg-[hsl(var(--sidebar-background))] transition-transform overflow-y-auto',
           isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
           className
         )}
