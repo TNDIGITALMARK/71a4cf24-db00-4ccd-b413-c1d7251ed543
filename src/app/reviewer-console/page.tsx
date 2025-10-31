@@ -40,6 +40,7 @@ import {
   ClockIcon,
   MessageSquareIcon,
   AlertCircleIcon,
+  ClipboardListIcon,
 } from 'lucide-react';
 
 export default function ReviewerConsolePage() {
