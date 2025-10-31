@@ -1,59 +1,82 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================
+   APS AI STRATEGY PORTAL - DESIGN SYSTEM
+   ============================================
+   Color Palette: Professional blue-grey from design reference
+   Typography: Inter font family (Segoe UI fallback)
+   Spacing: 8px grid system
+   Components: Clean, minimal enterprise UI
+   ============================================ */
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
-
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
-
-  /* Popovers with white background */
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
-
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  /* APS Brand Colors - Extracted from design reference */
+  /* Primary: Dark slate blue for sidebar/header (#334155) */
+  --primary: 215 25% 27%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Darker navy accent (#1e3a5f) */
+  --secondary: 213 51% 24%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Background: Light grey/white (#f8fafc) */
+  --background: 210 20% 98%;
+  --foreground: 220 39% 11%;
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Card: Pure white (#ffffff) */
+  --card: 0 0% 100%;
+  --card-foreground: 220 39% 11%;
 
-  /* Destructive: Clean red */
-  --destructive: 0 70% 50%;
+  /* Accent: Bright cyan blue (#0ea5e9) */
+  --accent: 199 89% 48%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Success: Green for charts (#22c55e) */
+  --success: 142 71% 45%;
+  --success-foreground: 0 0% 100%;
+
+  /* Warning: Orange for charts (#f97316) */
+  --warning: 25 95% 53%;
+  --warning-foreground: 0 0% 100%;
+
+  /* Muted: Grey for secondary text (#64748b) */
+  --muted: 215 20% 65%;
+  --muted-foreground: 215 16% 47%;
+
+  /* Border: Light grey (#e2e8f0) */
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 199 89% 48%;
+
+  /* Destructive: Red */
+  --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  /* Popover */
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 39% 11%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border Radius - 8px for cards, 6px for buttons */
+  --radius: 0.5rem;
 
-  /* Sidebar: Clean white with black text */
-  --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  /* Sidebar: Dark slate blue (#334155) */
+  --sidebar-background: 215 25% 27%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-primary: 199 89% 48%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 215 25% 35%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-border: 215 25% 20%;
+  --sidebar-ring: 199 89% 48%;
+
+  /* APS Custom Properties */
+  --aps-navy: 213 51% 24%;
+  --aps-slate: 215 25% 27%;
+  --aps-cyan: 199 89% 48%;
+  --aps-light-bg: 210 20% 98%;
+  --aps-text-dark: 220 39% 11%;
+  --aps-text-muted: 215 16% 47%;
 }
 
 .dark {
@@ -171,33 +194,109 @@ All colors MUST be HSL.
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-/* Minimal, clean typography */
-h1, h2, h3, h4, h5, h6 {
+/* APS Typography Scale - Matching design reference */
+h1 {
+  font-size: 24px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
   color: hsl(var(--foreground));
+  margin: 0;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+h5, h6 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+  margin: 0;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
 }
 
 /* Clean button styles */
 button {
+  font-family: inherit;
   font-weight: 500;
+  font-size: 14px;
 }
 
-/* Subtle shadows for depth */
+/* Input defaults */
+input, select, textarea {
+  font-family: inherit;
+  font-size: 14px;
+  color: hsl(var(--foreground));
+}
+
+input::placeholder, textarea::placeholder {
+  color: hsl(var(--muted-foreground));
+}
+
+/* Subtle shadows for depth - matching design reference */
 .shadow-sm {
   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 }
 
 .shadow {
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 
 .shadow-md {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* APS Card Shadow - exact from design */
+.aps-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: hsl(var(--card));
+}
+
+/* Link styles */
+a {
+  color: hsl(var(--accent));
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: hsl(var(--accent));
+  opacity: 0.8;
 }
