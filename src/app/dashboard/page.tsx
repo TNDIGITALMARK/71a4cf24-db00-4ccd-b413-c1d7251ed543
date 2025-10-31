@@ -53,11 +53,30 @@ export default function DashboardPage() {
   return (
     <APSLayout title="Executive Dashboard">
       <div className="space-y-6">
+        {/* Hero Banner with Background Image */}
+        <div
+          className="relative overflow-hidden rounded-lg bg-gradient-to-r from-[hsl(var(--primary))] to-[hsl(var(--accent))] p-8"
+          style={{
+            backgroundImage: 'url(/generated/hero-dashboard-bg.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold text-white mb-2">AI Strategy Portal</h2>
+            <p className="text-white/90 max-w-2xl">
+              Strategic insights and program metrics for AI Strategy Initiative
+            </p>
+          </div>
+          {/* Decorative overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--primary))]/80 to-[hsl(var(--accent))]/60" />
+        </div>
+
         {/* Header Actions */}
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm text-[hsl(var(--muted-foreground))]">
-              Strategic insights and program metrics for AI Strategy Initiative
+              Monitor key performance indicators and track program success
             </p>
           </div>
 
@@ -166,6 +185,16 @@ export default function DashboardPage() {
               <CardDescription>Current quarter approval and implementation rates</CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="relative">
+                {/* Background illustration */}
+                <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none">
+                  <img
+                    src="/generated/innovation-illustration.png"
+                    alt=""
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
               <div className="flex items-center justify-around py-8">
                 {/* Approval Rate Gauge */}
                 <div className="text-center">
@@ -240,7 +269,15 @@ export default function DashboardPage() {
         {/* Charts Row 2 */}
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Departmental Participation */}
-          <Card>
+          <Card className="relative overflow-hidden">
+            {/* Decorative background pattern */}
+            <div className="absolute top-0 right-0 w-48 h-48 opacity-5 pointer-events-none">
+              <img
+                src="/generated/decorative-pattern-1.png"
+                alt=""
+                className="w-full h-full object-contain"
+              />
+            </div>
             <CardHeader>
               <CardTitle>Departmental Participation</CardTitle>
               <CardDescription>Submission counts by department</CardDescription>

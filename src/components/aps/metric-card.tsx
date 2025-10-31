@@ -24,11 +24,20 @@ export function MetricCard({
   return (
     <div
       className={cn(
-        'aps-card p-6 transition-shadow hover:shadow-md',
+        'aps-card p-6 transition-shadow hover:shadow-md relative overflow-hidden',
         className
       )}
     >
-      <div className="flex items-start justify-between">
+      {/* Subtle decorative element */}
+      <div className="absolute top-0 right-0 w-32 h-32 opacity-[0.02] pointer-events-none">
+        <img
+          src="/generated/decorative-pattern-1.png"
+          alt=""
+          className="w-full h-full object-contain"
+        />
+      </div>
+
+      <div className="flex items-start justify-between relative z-10">
         <div className="flex-1">
           <p className="text-sm font-medium text-[hsl(var(--muted-foreground))]">
             {title}

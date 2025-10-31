@@ -58,11 +58,30 @@ export default function IdeaHubPage() {
   return (
     <APSLayout title="Idea Hub">
       <div className="space-y-6">
+        {/* Hero Banner with Collaboration Imagery */}
+        <div
+          className="relative overflow-hidden rounded-lg bg-gradient-to-r from-[hsl(var(--secondary))] to-[hsl(var(--primary))] p-8"
+          style={{
+            backgroundImage: 'url(/generated/collaboration-banner.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold text-white mb-2">Idea Hub</h2>
+            <p className="text-white/90 max-w-2xl">
+              Share your innovative AI and operational improvement ideas
+            </p>
+          </div>
+          {/* Decorative overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--secondary))]/85 to-[hsl(var(--primary))]/70" />
+        </div>
+
         {/* Header Actions */}
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm text-[hsl(var(--muted-foreground))]">
-              Share your innovative AI and operational improvement ideas
+              Collaborate, innovate, and transform ideas into action
             </p>
           </div>
 
@@ -291,8 +310,18 @@ export default function IdeaHubPage() {
           {filteredIdeas.length === 0 && (
             <Card>
               <CardContent className="flex flex-col items-center justify-center py-12">
-                <p className="text-[hsl(var(--muted-foreground))]">
+                <div className="w-48 h-48 mb-4">
+                  <img
+                    src="/generated/empty-state.png"
+                    alt="No results found"
+                    className="w-full h-full object-contain opacity-50"
+                  />
+                </div>
+                <p className="text-[hsl(var(--muted-foreground))] text-lg font-medium">
                   No ideas found matching your filters
+                </p>
+                <p className="text-[hsl(var(--muted-foreground))] text-sm mt-2">
+                  Try adjusting your search criteria or submit a new idea
                 </p>
               </CardContent>
             </Card>

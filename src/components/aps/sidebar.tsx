@@ -62,13 +62,22 @@ export function Sidebar({ className }: SidebarProps) {
       {/* Sidebar */}
       <aside
         className={cn(
-          'fixed left-0 top-0 z-40 h-screen w-60 border-r bg-[hsl(var(--sidebar-background))] transition-transform',
+          'fixed left-0 top-0 z-40 h-screen w-60 border-r bg-[hsl(var(--sidebar-background))] transition-transform relative overflow-hidden',
           isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
           className
         )}
         aria-label="Sidebar navigation"
       >
-      <div className="flex h-full flex-col">
+      {/* Decorative background pattern */}
+      <div className="absolute bottom-0 left-0 w-full h-64 opacity-5 pointer-events-none">
+        <img
+          src="/generated/innovation-illustration.png"
+          alt=""
+          className="w-full h-full object-contain"
+        />
+      </div>
+
+      <div className="flex h-full flex-col relative z-10">
         {/* Logo/Header */}
         <div className="flex h-16 items-center border-b border-[hsl(var(--sidebar-border))] px-6">
           <div className="flex items-center space-x-2">
